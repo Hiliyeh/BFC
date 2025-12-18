@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC Belgium | Belgium's Fried Chicken</title>
+    <meta name="description" content="Le meilleur poulet frit de Belgique. Croustillant, juteux, inoubliable.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/logo/logoNew.png">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <img src="../assets/logo/logoNew.png" alt="BFC" class="loader-logo">
+            <div class="loader-bar">
+                <div class="loader-progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="../assets/logo/logoNew.png" alt="BFC Belgium">
+            </a>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#menu" class="nav-link">Menu</a>
+                <a href="#deals" class="nav-link">Deals</a>
+                <a href="#restaurants" class="nav-link">Restaurants</a>
+                <a href="#order" class="nav-link nav-link--cta">Commander</a>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-video-container">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="../assets/videos/videoHero.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-text">Depuis 2019</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-title-line">Belgium's</span>
+                <span class="hero-title-line hero-title-line--accent">Fried Chicken</span>
+            </h1>
+            <p class="hero-subtitle">Croustillant. Juteux. Inoubliable.</p>
+
+            <div class="hero-cta">
+                <a href="#menu" class="btn btn--primary">
+                    <span>Voir le Menu</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#order" class="btn btn--secondary">Commander Maintenant</a>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span class="marquee-item">CRISPY CHICKEN</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">HOT WINGS</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">BURGERS</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">BUCKETS</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">CRISPY CHICKEN</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">HOT WINGS</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">BURGERS</span>
+            <span class="marquee-dot"></span>
+            <span class="marquee-item">BUCKETS</span>
+            <span class="marquee-dot"></span>
+        </div>
+    </div>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-tag">Notre Menu</span>
+                <h2 class="section-title">Fait pour les <span class="text-accent">Affamés</span></h2>
+                <p class="section-desc">Du poulet frit comme vous n'en avez jamais goûté. Chaque bouchée est une explosion de saveurs.</p>
+            </header>
+
+            <!-- Category Tabs -->
+            <div class="menu-tabs">
+                <button class="menu-tab active" data-category="burgers">Burgers</button>
+                <button class="menu-tab" data-category="buckets">Buckets</button>
+                <button class="menu-tab" data-category="desserts">Desserts</button>
+                <button class="menu-tab" data-category="drinks">Boissons</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Burgers -->
+                <article class="product-card" data-category="burgers">
+                    <div class="product-image">
+                        <img src="../assets/images/burgers/chickenBurger.png" alt="Chicken Burger" loading="lazy">
+                        <div class="product-badge">Populaire</div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Chicken Burger</h3>
+                        <p class="product-desc">Filet de poulet croustillant, laitue fraîche, tomate, mayo maison</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="burgers">
+                    <div class="product-image">
+                        <img src="../assets/images/burgers/maxiChicken.png" alt="Maxi Chicken" loading="lazy">
+                        <div class="product-badge product-badge--hot">XXL</div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Maxi Chicken</h3>
+                        <p class="product-desc">Double filet de poulet, double fromage, laitue, tomate, sauce signature</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="burgers">
+                    <div class="product-image">
+                        <img src="../assets/images/burgers/crunchy.png" alt="Crunchy Burger" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Crunchy Burger</h3>
+                        <p class="product-desc">Extra croustillant, notre recette secrète pour un crunch parfait</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="burgers">
+                    <div class="product-image">
+                        <img src="../assets/images/burgers/meatBurger.png" alt="Meat Burger" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Meat Burger</h3>
+                        <p class="product-desc">Steak de boeuf juteux, fromage fondant, oignons caramélisés</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="burgers">
+                    <div class="product-image">
+                        <img src="../assets/images/burgers/wrap.png" alt="Wrap" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Chicken Wrap</h3>
+                        <p class="product-desc">Tortilla moelleuse, poulet croustillant, légumes frais, sauce crémeuse</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="burgers">
+                    <div class="product-image">
+                        <img src="../assets/images/burgers/fishBurger.png" alt="Fish Burger" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Fish Burger</h3>
+                        <p class="product-desc">Filet de poisson pané, sauce tartare maison, laitue croquante</p>
+                    </div>
+                </article>
+
+                <!-- Buckets -->
+                <article class="product-card" data-category="buckets" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/buckets/10tenders.png" alt="10 Tenders" loading="lazy">
+                        <div class="product-badge">Best Seller</div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">10 Tenders</h3>
+                        <p class="product-desc">10 morceaux de poulet ultra croustillants avec sauce au choix</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="buckets" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/buckets/26hotwings.png" alt="26 Hot Wings" loading="lazy">
+                        <div class="product-badge product-badge--hot">Spicy</div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">26 Hot Wings</h3>
+                        <p class="product-desc">26 ailes de poulet épicées pour les amateurs de sensations fortes</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="buckets" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/buckets/familyBucket.png" alt="Family Bucket" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Family Bucket</h3>
+                        <p class="product-desc">Le festin familial parfait avec un assortiment généreux de poulet</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="buckets" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/buckets/bucketMix.png" alt="Bucket Mix" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Bucket Mix</h3>
+                        <p class="product-desc">Le meilleur de tout: tenders, wings, et drumsticks réunis</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="buckets" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/buckets/duoBucket.png" alt="Duo Bucket" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Duo Bucket</h3>
+                        <p class="product-desc">Parfait pour deux, avec wings croustillants et drumsticks juteux</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="buckets" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/buckets/maxi.png" alt="Maxi Bucket" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Maxi Bucket</h3>
+                        <p class="product-desc">Pour les vrais amateurs: notre plus grande sélection de poulet</p>
+                    </div>
+                </article>
+
+                <!-- Desserts -->
+                <article class="product-card" data-category="desserts" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/desserts/chocolateFudgeBrownie.png" alt="Chocolate Fudge Brownie" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Chocolate Fudge Brownie</h3>
+                        <p class="product-desc">Glace au brownie fondant avec morceaux de chocolat</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="desserts" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/desserts/cookieDough.png" alt="Cookie Dough" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Cookie Dough</h3>
+                        <p class="product-desc">Glace vanille avec généreux morceaux de pâte à cookies</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="desserts" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/desserts/strawberryCheesecake.png" alt="Strawberry Cheesecake" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Strawberry Cheesecake</h3>
+                        <p class="product-desc">Glace cheesecake avec vrais morceaux de fraises</p>
+                    </div>
+                </article>
+
+                <!-- Drinks -->
+                <article class="product-card" data-category="drinks" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/drinks/pepsi.png" alt="Pepsi" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Pepsi</h3>
+                        <p class="product-desc">Le classique rafraîchissant</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="drinks" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/drinks/pepsiMax.png" alt="Pepsi Max" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Pepsi Max</h3>
+                        <p class="product-desc">Zéro sucre, maximum de goût</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="drinks" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/drinks/7up.png" alt="7UP" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">7UP</h3>
+                        <p class="product-desc">Citron-lime pétillant</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="drinks" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/drinks/mirinda.png" alt="Mirinda" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Mirinda</h3>
+                        <p class="product-desc">Explosion d'orange</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="drinks" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/drinks/spaRiene.png" alt="Spa Reine" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Spa Reine</h3>
+                        <p class="product-desc">Eau minérale naturelle des Ardennes</p>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="drinks" style="display: none;">
+                    <div class="product-image">
+                        <img src="../assets/images/drinks/spaIntense.png" alt="Spa Intense" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Spa Intense</h3>
+                        <p class="product-desc">Eau pétillante naturelle</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="deals" id="deals">
+        <div class="container">
+            <header class="section-header section-header--light">
+                <span class="section-tag">Nos Menus</span>
+                <h2 class="section-title">Menus <span class="text-accent">Complets</span></h2>
+                <p class="section-desc">Burger + Frites + Boisson. Tout ce qu'il faut pour un repas parfait.</p>
+            </header>
+
+            <div class="deals-grid">
+                <article class="deal-card">
+                    <div class="deal-image">
+                        <img src="../assets/images/meals/chickenBurgerMeal.png" alt="Meal Chicken" loading="lazy">
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-name">Meal Chicken</h3>
+                        <p class="deal-desc">Chicken Burger + Frites + Boisson</p>
+                        <a href="#order" class="deal-cta">Commander</a>
+                    </div>
+                </article>
+
+                <article class="deal-card deal-card--featured">
+                    <div class="deal-badge">Best Value</div>
+                    <div class="deal-image">
+                        <img src="../assets/images/meals/maxiChickenMeal.png" alt="Meal Maxi Chicken" loading="lazy">
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-name">Meal Maxi Chicken</h3>
+                        <p class="deal-desc">Maxi Chicken Burger + Frites + Boisson</p>
+                        <a href="#order" class="deal-cta">Commander</a>
+                    </div>
+                </article>
+
+                <article class="deal-card">
+                    <div class="deal-image">
+                        <img src="../assets/images/meals/meatBurgerMeal.png" alt="Meal Meat" loading="lazy">
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-name">Meal Meat</h3>
+                        <p class="deal-desc">Meat Burger + Frites + Boisson</p>
+                        <a href="#order" class="deal-cta">Commander</a>
+                    </div>
+                </article>
+
+                <article class="deal-card">
+                    <div class="deal-image">
+                        <img src="../assets/images/meals/mealMaxiMeat.png" alt="Meal Maxi Meat" loading="lazy">
+                    </div>
+                    <div class="deal-content">
+                        <h3 class="deal-name">Meal Maxi Meat</h3>
+                        <p class="deal-desc">Maxi Meat Burger + Frites + Boisson</p>
+                        <a href="#order" class="deal-cta">Commander</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="../assets/images/photos/soHot.png" alt="Hot Wings" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../assets/images/photos/crunchy.png" alt="Crunchy Chicken" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="../assets/images/photos/menu.png" alt="Menu" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section class="restaurants" id="restaurants">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-tag">Nos Restaurants</span>
+                <h2 class="section-title">Trouvez-nous <span class="text-accent">Près de Vous</span></h2>
+                <p class="section-desc">6 adresses en Belgique pour satisfaire vos envies de poulet croustillant.</p>
+            </header>
+
+            <div class="restaurants-grid">
+                <article class="restaurant-card">
+                    <div class="restaurant-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="restaurant-name">BFC Anspach</h3>
+                    <p class="restaurant-address">Boulevard Anspach 50<br>1000 Bruxelles</p>
+                    <span class="restaurant-status restaurant-status--open">Ouvert</span>
+                </article>
+
+                <article class="restaurant-card">
+                    <div class="restaurant-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="restaurant-name">BFC Anderlecht</h3>
+                    <p class="restaurant-address">Rue Wayez 109<br>1070 Anderlecht</p>
+                    <span class="restaurant-status restaurant-status--open">Ouvert</span>
+                </article>
+
+                <article class="restaurant-card">
+                    <div class="restaurant-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="restaurant-name">BFC Saint-Gilles</h3>
+                    <p class="restaurant-address">Parvis de Saint-Gilles 10<br>1060 Saint-Gilles</p>
+                    <span class="restaurant-status restaurant-status--open">Ouvert</span>
+                </article>
+
+                <article class="restaurant-card">
+                    <div class="restaurant-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="restaurant-name">BFC Zaventem</h3>
+                    <p class="restaurant-address">Sint Stefaanstraat 17<br>1932 Zaventem</p>
+                    <span class="restaurant-status restaurant-status--open">Ouvert</span>
+                </article>
+
+                <article class="restaurant-card">
+                    <div class="restaurant-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="restaurant-name">BFC La Louvière</h3>
+                    <p class="restaurant-address">Rue Albert 1er 84<br>7100 La Louvière</p>
+                    <span class="restaurant-status restaurant-status--open">Ouvert</span>
+                </article>
+
+                <article class="restaurant-card restaurant-card--coming">
+                    <div class="restaurant-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="restaurant-name">BFC Schaerbeek</h3>
+                    <p class="restaurant-address">Adresse à venir<br>1030 Schaerbeek</p>
+                    <span class="restaurant-status restaurant-status--soon">Bientôt</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order" id="order">
+        <div class="container">
+            <header class="section-header section-header--light">
+                <span class="section-tag">Commander</span>
+                <h2 class="section-title">Livré Chez <span class="text-accent">Vous</span></h2>
+                <p class="section-desc">Commandez via votre plateforme préférée et recevez votre poulet croustillant en quelques minutes.</p>
+            </header>
+
+            <div class="delivery-platforms">
+                <a href="https://deliveroo.be/en/menu/brussels/bruxelles-centre/bfc-anspach" target="_blank" class="delivery-card">
+                    <img src="../assets/icons/delivery/deliveroo.svg" alt="Deliveroo" class="delivery-logo">
+                    <span class="delivery-name">Deliveroo</span>
+                    <span class="delivery-cta">Commander</span>
+                </a>
+
+                <a href="https://www.ubereats.com/be-en/store/bfc/nKwZ6BB3SROK0fUOtjTecQ" target="_blank" class="delivery-card">
+                    <img src="../assets/icons/delivery/uberEats.svg" alt="Uber Eats" class="delivery-logo">
+                    <span class="delivery-name">Uber Eats</span>
+                    <span class="delivery-cta">Commander</span>
+                </a>
+
+                <a href="https://www.takeaway.com/be-en/menu/bfc-1" target="_blank" class="delivery-card">
+                    <img src="../assets/icons/delivery/takeaway.svg" alt="Takeaway" class="delivery-logo">
+                    <span class="delivery-name">Takeaway</span>
+                    <span class="delivery-cta">Commander</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="../assets/logo/logoNew.png" alt="BFC Belgium" class="footer-logo">
+                    <p class="footer-tagline">Belgium's Fried Chicken depuis 2019. Le meilleur poulet croustillant de Belgique.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/bfc_belgium/" target="_blank" class="social-link" aria-label="Instagram">
+                            <img src="../assets/icons/social/instagram.svg" alt="Instagram">
+                        </a>
+                        <a href="#" class="social-link" aria-label="TikTok">
+                            <img src="../assets/icons/social/tiktok.svg" alt="TikTok">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#deals">Deals</a></li>
+                        <li><a href="#restaurants">Restaurants</a></li>
+                        <li><a href="#order">Commander</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-title">Légal</h4>
+                    <ul>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-title">Commander</h4>
+                    <ul>
+                        <li><a href="https://deliveroo.be" target="_blank">Deliveroo</a></li>
+                        <li><a href="https://ubereats.com" target="_blank">Uber Eats</a></li>
+                        <li><a href="https://takeaway.com" target="_blank">Takeaway</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 BFC Belgium. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<!--
+    ╔═══════════════════════════════════════════════════════════════╗
+    ║  BFC Belgium - Restauration Rapide Premium                    ║
+    ║  © 2025 BFC Belgium - Tous droits réservés                    ║
+    ║  Développé par Hiliyeh Bashir                                 ║
+    ║  Contact : linkedin.com/in/hiliyeh-bashir                     ║
+    ╚═══════════════════════════════════════════════════════════════╝
+-->
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BFC Belgium | Belgium's Fried Chicken</title>
+    <meta name="description" content="Le meilleur poulet frit de Belgique. Croustillant, juteux, inoubliable.">
+    <meta name="author" content="Hiliyeh Bashir">
+    <meta name="copyright" content="© 2025 BFC Belgium - Tous droits réservés">
+    <meta name="created" content="Décembre 2025">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
+    <!-- Font Awesome (Food Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Iconify (Emoji Icons - frites, oignon, tortilla) -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <!-- Lucide Icons (UI) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Skip Navigation -->
+    <a href="#menu" class="skip-link" data-i18n="skip.link">Aller au contenu principal</a>
+
+    <!-- Loader -->
+    <div class="loader" id="loader" aria-hidden="true">
+        <div class="loader-content">
+            <img src="assets/logo/logoNew.png" alt="BFC" class="loader-logo">
+            <div class="loader-text" data-i18n="loader.text">Préparation en cours</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <img src="assets/logo/logoNew.png" alt="BFC Belgium">
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="nav-links nav-links--desktop">
+                <a href="#menu" class="nav-link"><i data-lucide="utensils"></i><span data-i18n="nav.products">Produits</span></a>
+                <a href="#meals" class="nav-link"><i data-lucide="clipboard-list"></i><span data-i18n="nav.menu">Menu</span></a>
+                <a href="#restaurants" class="nav-link"><i data-lucide="map-pin"></i><span data-i18n="nav.restaurants">Restaurants</span></a>
+                <a href="#order" class="nav-link nav-link--cta"><i data-lucide="shopping-bag"></i><span data-i18n="nav.order">Commander</span></a>
+
+                <!-- Language Switcher -->
+                <div class="lang-switcher" id="langSwitcher">
+                    <button class="lang-current" id="langCurrent" aria-expanded="false" aria-haspopup="listbox">
+                        <span class="lang-code">FR</span>
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown" role="listbox">
+                        <button class="lang-option active" data-lang="fr" role="option" aria-selected="true">FR</button>
+                        <button class="lang-option" data-lang="nl" role="option" aria-selected="false">NL</button>
+                        <button class="lang-option" data-lang="en" role="option" aria-selected="false">EN</button>
+                    </div>
+                </div>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Mobile Menu Overlay -->
+            <div class="nav-overlay" id="navOverlay"></div>
+
+            <!-- Mobile Menu Panel -->
+            <div class="nav-mobile" id="navMobile">
+                <button class="nav-mobile-close" id="navMobileClose" aria-label="Fermer le menu">
+                    <i data-lucide="x"></i>
+                </button>
+                <div class="nav-mobile-header">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="nav-mobile-logo">
+                    <span class="nav-mobile-tagline">Belgium's Fried Chicken</span>
+                </div>
+
+                <nav class="nav-mobile-links">
+                    <a href="#menu" class="nav-mobile-link">
+                        <span class="nav-mobile-link-icon"><i data-lucide="utensils"></i></span>
+                        <span class="nav-mobile-link-text">
+                            <span class="nav-mobile-link-title" data-i18n="nav.products">Produits</span>
+                            <span class="nav-mobile-link-desc" data-i18n="nav.mobile.products.desc">Burgers, Buckets, Boissons</span>
+                        </span>
+                    </a>
+                    <a href="#meals" class="nav-mobile-link">
+                        <span class="nav-mobile-link-icon"><i data-lucide="clipboard-list"></i></span>
+                        <span class="nav-mobile-link-text">
+                            <span class="nav-mobile-link-title" data-i18n="nav.menu">Menus</span>
+                            <span class="nav-mobile-link-desc" data-i18n="nav.mobile.menu.desc">Composez votre repas</span>
+                        </span>
+                    </a>
+                    <a href="#restaurants" class="nav-mobile-link">
+                        <span class="nav-mobile-link-icon"><i data-lucide="map-pin"></i></span>
+                        <span class="nav-mobile-link-text">
+                            <span class="nav-mobile-link-title" data-i18n="nav.restaurants">Restaurants</span>
+                            <span class="nav-mobile-link-desc" data-i18n="nav.mobile.restaurants.desc">Trouvez le plus proche</span>
+                        </span>
+                    </a>
+                    <a href="#order" class="nav-mobile-link nav-mobile-link--cta">
+                        <span class="nav-mobile-link-icon"><i data-lucide="shopping-bag"></i></span>
+                        <span class="nav-mobile-link-text">
+                            <span class="nav-mobile-link-title" data-i18n="nav.order">Commander</span>
+                            <span class="nav-mobile-link-desc" data-i18n="nav.mobile.order.desc">Uber Eats, Deliveroo, Takeaway</span>
+                        </span>
+                    </a>
+                </nav>
+
+                <div class="nav-mobile-footer">
+                    <!-- Mobile Language Switcher -->
+                    <div class="lang-switcher-mobile" id="langSwitcherMobile">
+                        <button class="lang-btn-mobile" data-lang="fr">FR</button>
+                        <button class="lang-btn-mobile" data-lang="nl">NL</button>
+                        <button class="lang-btn-mobile" data-lang="en">EN</button>
+                    </div>
+
+                    <div class="nav-mobile-social">
+                        <a href="https://www.instagram.com/bfc_belgium/" target="_blank" class="nav-mobile-social-link" aria-label="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                        <a href="#" class="nav-mobile-social-link" aria-label="Facebook">
+                            <i data-lucide="facebook"></i>
+                        </a>
+                        <a href="#" class="nav-mobile-social-link" aria-label="TikTok">
+                            <iconify-icon icon="ic:baseline-tiktok"></iconify-icon>
+                        </a>
+                    </div>
+                    <p class="nav-mobile-info" data-i18n="nav.mobile.social">Suivez-nous sur les réseaux</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-video-container">
+            <video class="hero-video" autoplay muted loop playsinline aria-label="Vidéo de présentation BFC">
+                <source src="assets/videos/videoHero.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la vidéo HTML5.
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-brand">
+                <div class="hero-brand-word"><span class="brand-initial">B</span><span class="brand-rest">elgium's</span></div>
+                <div class="hero-brand-word"><span class="brand-initial">F</span><span class="brand-rest">ried</span></div>
+                <div class="hero-brand-word"><span class="brand-initial">C</span><span class="brand-rest">hicken</span></div>
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-title-line" data-i18n="hero.title.line1">CROUSTILLANT.</span>
+                <span class="hero-title-line" data-i18n="hero.title.line2">JUTEUX.</span>
+                <span class="hero-title-line hero-title-accent" data-i18n="hero.title.line3">INOUBLIABLE.</span>
+            </h1>
+            <p class="hero-subtitle" data-i18n="hero.subtitle">Le poulet frit qui fait la différence depuis 2019</p>
+            <div class="hero-cta">
+                <a href="#menu" class="btn btn-primary">
+                    <span data-i18n="hero.cta.menu">Découvrir le Menu</span>
+                    <i data-lucide="arrow-right"></i>
+                </a>
+                <a href="#order" class="btn btn-secondary" data-i18n="hero.cta.order">Commander</a>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <div class="hero-scroll-mouse">
+                <div class="hero-scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-tag" data-i18n="menu.tag">Notre Carte</span>
+                <h2 class="section-title" data-i18n="menu.title">FAIT POUR LES AFFAMES</h2>
+            </header>
+
+            <!-- Category Tabs -->
+            <div class="menu-nav">
+                <div class="menu-tabs">
+                    <button class="menu-tab active" data-category="burgers">
+                        <i data-lucide="hamburger"></i>
+                        <span data-i18n="menu.tab.burgers">Burgers</span>
+                    </button>
+                    <button class="menu-tab" data-category="buckets">
+                        <i data-lucide="drumstick"></i>
+                        <span data-i18n="menu.tab.buckets">Buckets</span>
+                    </button>
+                    <button class="menu-tab" data-category="desserts">
+                        <i data-lucide="ice-cream-cone"></i>
+                        <span data-i18n="menu.tab.desserts">Desserts</span>
+                    </button>
+                    <button class="menu-tab" data-category="drinks">
+                        <i data-lucide="cup-soda"></i>
+                        <span data-i18n="menu.tab.drinks">Boissons</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Burgers -->
+                <article class="product-card" data-category="burgers">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <span class="product-badge">Populaire</span>
+                        <img src="assets/images/products/burgers/chickenBurger.png" alt="Chicken Burger" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Chicken Burger</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Poulet</li>
+                            <li><i data-lucide="check"></i>Laitue</li>
+                            <li><i data-lucide="check"></i>Tomate</li>
+                            <li><i data-lucide="check"></i>Mayo</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="burgers">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <span class="product-badge product-badge--xl">XXL</span>
+                        <img src="assets/images/products/burgers/maxiChicken.png" alt="Maxi Chicken" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Maxi Chicken</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Double Poulet</li>
+                            <li><i data-lucide="check"></i>Fromage</li>
+                            <li><i data-lucide="check"></i>Sauce</li>
+                            <li><i data-lucide="check"></i>Oignons</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="burgers">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/burgers/crunchy.png" alt="Crunchy Burger" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Crunchy Burger</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Poulet Crispy</li>
+                            <li><i data-lucide="check"></i>Salade</li>
+                            <li><i data-lucide="check"></i>Sauce</li>
+                            <li><i data-lucide="check"></i>Pain</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="burgers">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/burgers/meatBurger.png" alt="Meat Burger" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Meat Burger</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Boeuf</li>
+                            <li><i data-lucide="check"></i>Fromage</li>
+                            <li><i data-lucide="check"></i>Oignons</li>
+                            <li><i data-lucide="check"></i>Sauce BBQ</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="burgers">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <span class="product-badge product-badge--xl">XXL</span>
+                        <img src="assets/images/products/burgers/maxiMeat.png" alt="Maxi Meat" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Maxi Meat</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Double Boeuf</li>
+                            <li><i data-lucide="check"></i>Fromage</li>
+                            <li><i data-lucide="check"></i>Bacon</li>
+                            <li><i data-lucide="check"></i>Oignons</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="burgers">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/burgers/wrap.png" alt="Wrap" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Chicken Wrap</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Tortilla</li>
+                            <li><i data-lucide="check"></i>Poulet</li>
+                            <li><i data-lucide="check"></i>Sauce</li>
+                            <li><i data-lucide="check"></i>Crudites</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card" data-category="burgers">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/burgers/fishBurger.png" alt="Fish Burger" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Fish Burger</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Poisson</li>
+                            <li><i data-lucide="check"></i>Tartare</li>
+                            <li><i data-lucide="check"></i>Salade</li>
+                            <li><i data-lucide="check"></i>Pain</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Buckets -->
+                <article class="product-card hidden" data-category="buckets">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <span class="product-badge">Best Seller</span>
+                        <img src="assets/images/products/buckets/10tenders.png" alt="10 Tenders" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">10 Tenders</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>10 Tenders</li>
+                            <li><i data-lucide="check"></i>2 Sauces</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="buckets">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <span class="product-badge product-badge--spicy">Spicy</span>
+                        <img src="assets/images/products/buckets/26hotwings.png" alt="26 Hot Wings" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">26 Hot Wings</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>26 Wings</li>
+                            <li><i data-lucide="check"></i>Epice</li>
+                            <li><i data-lucide="check"></i>3 Sauces</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="buckets">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/buckets/familyBucket.png" alt="Family Bucket" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Family Bucket</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>15 Pieces</li>
+                            <li><i data-lucide="check"></i>Frites</li>
+                            <li><i data-lucide="check"></i>Coleslaw</li>
+                            <li><i data-lucide="check"></i>4 Sauces</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="buckets">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/buckets/bucketMix.png" alt="Bucket Mix" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Bucket Mix</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Tenders</li>
+                            <li><i data-lucide="check"></i>Wings</li>
+                            <li><i data-lucide="check"></i>Drumsticks</li>
+                            <li><i data-lucide="check"></i>3 Sauces</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="buckets">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/buckets/duoBucket.png" alt="Duo Bucket" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Duo Bucket</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>8 Pieces</li>
+                            <li><i data-lucide="check"></i>Frites</li>
+                            <li><i data-lucide="check"></i>2 Sauces</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="buckets">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <span class="product-badge product-badge--xl">XL</span>
+                        <img src="assets/images/products/buckets/maxi.png" alt="Maxi Bucket" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Maxi Bucket</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>20 Pieces</li>
+                            <li><i data-lucide="check"></i>2x Frites</li>
+                            <li><i data-lucide="check"></i>Coleslaw XL</li>
+                            <li><i data-lucide="check"></i>6 Sauces</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Desserts -->
+                <article class="product-card hidden" data-category="desserts">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/desserts/brownie.png" alt="Chocolate Fudge Brownie" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Chocolate Brownie</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Glace</li>
+                            <li><i data-lucide="check"></i>Brownie</li>
+                            <li><i data-lucide="check"></i>Chocolat</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="desserts">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/desserts/cookieDough.png" alt="Cookie Dough" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Cookie Dough</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Glace</li>
+                            <li><i data-lucide="check"></i>Cookie</li>
+                            <li><i data-lucide="check"></i>Pepites</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="desserts">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/desserts/cheesecake.png" alt="Strawberry Cheesecake" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Strawberry Cheesecake</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Cheesecake</li>
+                            <li><i data-lucide="check"></i>Fraises</li>
+                            <li><i data-lucide="check"></i>Coulis</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Drinks -->
+                <article class="product-card hidden" data-category="drinks">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/drinks/pepsi.png" alt="Pepsi" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Pepsi</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>33cl / 50cl</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="drinks">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <span class="product-badge">Zero</span>
+                        <img src="assets/images/products/drinks/pepsiMax.png" alt="Pepsi Max" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Pepsi Max</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Zero Sucre</li>
+                            <li><i data-lucide="check"></i>33cl / 50cl</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="drinks">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/drinks/7up.png" alt="7UP" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">7UP</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Citron-Lime</li>
+                            <li><i data-lucide="check"></i>33cl / 50cl</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="drinks">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/drinks/mirinda.png" alt="Mirinda" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Mirinda</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Orange</li>
+                            <li><i data-lucide="check"></i>33cl / 50cl</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="drinks">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/drinks/spaRiene.png" alt="Spa Reine" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Spa Reine</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Eau Plate</li>
+                            <li><i data-lucide="check"></i>50cl</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="product-card hidden" data-category="drinks">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="product-image">
+                        <img src="assets/images/products/drinks/spaIntense.png" alt="Spa Intense" loading="lazy">
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-name">Spa Intense</h3>
+                        <ul class="product-ingredients">
+                            <li><i data-lucide="check"></i>Petillante</li>
+                            <li><i data-lucide="check"></i>50cl</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meals Section -->
+    <section class="meals" id="meals">
+        <!-- Mobile Welcome Selector -->
+        <div class="meal-welcome" id="mealWelcome">
+            <div class="meal-welcome-content">
+                <div class="meal-welcome-header">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="meal-welcome-logo">
+                    <h2 class="meal-welcome-title" data-i18n="meals.welcome.title">Composez votre menu</h2>
+                    <p class="meal-welcome-subtitle" data-i18n="meals.welcome.subtitle">En 2 clics, trouvez le menu parfait</p>
+                </div>
+
+                <div class="meal-welcome-steps">
+                    <!-- Step 1: Faim -->
+                    <div class="welcome-step active" data-step="1">
+                        <span class="welcome-step-number">1/2</span>
+                        <span class="welcome-step-label" data-i18n="meals.step1.label">Quelle faim ?</span>
+                        <div class="welcome-options welcome-options--visual">
+                            <button class="welcome-option welcome-option--visual" data-size="petit">
+                                <div class="welcome-option-img">
+                                    <img src="assets/images/meals/chickenBurgerMeal.png" alt="Petite faim">
+                                </div>
+                                <div class="welcome-option-info">
+                                    <span class="welcome-option-text" data-i18n="meals.size.small">Petite faim</span>
+                                    <span class="welcome-option-desc" data-i18n="meals.size.small.desc">Burger + Frites + Boisson</span>
+                                </div>
+                            </button>
+                            <button class="welcome-option welcome-option--visual" data-size="grand">
+                                <div class="welcome-option-img">
+                                    <img src="assets/images/meals/maxiChickenMeal.png" alt="Grande faim">
+                                </div>
+                                <div class="welcome-option-info">
+                                    <span class="welcome-option-text" data-i18n="meals.size.big">Grande faim</span>
+                                    <span class="welcome-option-desc" data-i18n="meals.size.big.desc">Maxi Burger + Large Frites + 50cl</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: J'aime -->
+                    <div class="welcome-step" data-step="2">
+                        <span class="welcome-step-number">2/2</span>
+                        <span class="welcome-step-label" data-i18n="meals.step2.label">Vous préférez ?</span>
+                        <div class="welcome-options welcome-options--visual">
+                            <button class="welcome-option welcome-option--visual" data-type="poulet">
+                                <div class="welcome-option-img">
+                                    <img src="assets/images/burgers/chickenBurger.png" alt="Poulet">
+                                </div>
+                                <div class="welcome-option-info">
+                                    <iconify-icon icon="twemoji:poultry-leg"></iconify-icon>
+                                    <span class="welcome-option-text" data-i18n="meals.type.chicken">Poulet</span>
+                                </div>
+                            </button>
+                            <button class="welcome-option welcome-option--visual" data-type="boeuf">
+                                <div class="welcome-option-img">
+                                    <img src="assets/images/burgers/meatBurger.png" alt="Boeuf">
+                                </div>
+                                <div class="welcome-option-info">
+                                    <iconify-icon icon="twemoji:cut-of-meat"></iconify-icon>
+                                    <span class="welcome-option-text" data-i18n="meals.type.beef">Boeuf</span>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="meal-welcome-skip" id="mealWelcomeSkip" data-i18n="meals.skip">
+                    Voir tous les menus
+                </button>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Section Header -->
+            <div class="section-header section-header--light">
+                <h2 class="section-title" data-i18n="meals.title">Vous avez ?</h2>
+            </div>
+
+            <!-- Meal Filters -->
+            <div class="meal-filters" id="mealFilters">
+                <div class="filter-group filter-group--light">
+                    <span class="filter-label" data-i18n="meals.filter.hunger">Faim</span>
+                    <div class="filter-options">
+                        <button class="filter-btn filter-btn--light active" data-meal-size="all" data-i18n="meals.filter.all">Tous</button>
+                        <button class="filter-btn filter-btn--light" data-meal-size="petit" data-i18n="meals.filter.small">Petite</button>
+                        <button class="filter-btn filter-btn--light" data-meal-size="grand" data-i18n="meals.filter.big">Grande</button>
+                    </div>
+                </div>
+                <div class="filter-group filter-group--light">
+                    <span class="filter-label" data-i18n="meals.filter.like">J'aime</span>
+                    <div class="filter-options">
+                        <button class="filter-btn filter-btn--light active" data-meal-type="all" data-i18n="meals.filter.all">Tous</button>
+                        <button class="filter-btn filter-btn--light" data-meal-type="poulet"><iconify-icon icon="twemoji:poultry-leg"></iconify-icon> <span data-i18n="meals.type.chicken">Poulet</span></button>
+                        <button class="filter-btn filter-btn--light" data-meal-type="boeuf"><iconify-icon icon="twemoji:cut-of-meat"></iconify-icon> <span data-i18n="meals.type.beef">Boeuf</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="meals-grid" id="mealsGrid">
+                <article class="meal-card" data-meal-size="petit" data-meal-type="poulet">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="meal-image">
+                        <img src="assets/images/meals/chickenBurgerMeal.png" alt="Meal Chicken" loading="lazy">
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">Meal Chicken</h3>
+                        <ul class="meal-includes">
+                            <li><i data-lucide="check"></i>Burger</li>
+                            <li><i data-lucide="check"></i>Frites</li>
+                            <li><i data-lucide="check"></i>33cl</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="meal-card" data-meal-size="grand" data-meal-type="poulet">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="meal-image">
+                        <img src="assets/images/meals/maxiChickenMeal.png" alt="Meal Maxi Chicken" loading="lazy">
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">Meal Maxi Chicken</h3>
+                        <ul class="meal-includes">
+                            <li><i data-lucide="check"></i>Maxi Burger</li>
+                            <li><i data-lucide="check"></i>Large Frites</li>
+                            <li><i data-lucide="check"></i>50cl</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="meal-card" data-meal-size="petit" data-meal-type="boeuf">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="meal-image">
+                        <img src="assets/images/meals/meatBurgerMeal.png" alt="Meal Meat" loading="lazy">
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">Meal Meat</h3>
+                        <ul class="meal-includes">
+                            <li><i data-lucide="check"></i>Burger</li>
+                            <li><i data-lucide="check"></i>Frites</li>
+                            <li><i data-lucide="check"></i>33cl</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="meal-card" data-meal-size="grand" data-meal-type="boeuf">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
+                    <div class="meal-image">
+                        <img src="assets/images/meals/mealMaxiMeat.png" alt="Meal Maxi Meat" loading="lazy">
+                    </div>
+                    <div class="meal-content">
+                        <h3 class="meal-name">Meal Maxi Meat</h3>
+                        <ul class="meal-includes">
+                            <li><i data-lucide="check"></i>Maxi Burger</li>
+                            <li><i data-lucide="check"></i>Large Frites</li>
+                            <li><i data-lucide="check"></i>50cl</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Sales Section -->
+    <section class="live-sales" id="liveSales">
+        <div class="container">
+            <div class="live-sales-header">
+                <span class="live-indicator">
+                    <div class="chicken" aria-hidden="true">
+                        <div class="chicken-body"></div>
+                        <div class="chicken-head"></div>
+                        <div class="chicken-comb"></div>
+                        <div class="chicken-beak"></div>
+                        <div class="chicken-eye"></div>
+                        <div class="chicken-wattle"></div>
+                        <div class="chicken-wing"></div>
+                        <div class="chicken-tail"></div>
+                    </div>
+                    <span data-i18n="live.indicator">En direct</span>
+                </span>
+                <p class="live-sales-title" data-i18n="live.title">Commandes en cours dans nos restaurants</p>
+            </div>
+            <div class="live-sales-feed" id="liveSalesFeed">
+                <!-- Sales items will be generated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section class="restaurants" id="restaurants">
+        <div class="container">
+            <header class="section-header">
+                <span class="section-tag" data-i18n="restaurants.tag">Nos Adresses</span>
+                <h2 class="section-title" data-i18n="restaurants.title">TROUVEZ-NOUS</h2>
+                <p class="section-desc" data-i18n="restaurants.desc">6 restaurants en Belgique pour satisfaire vos envies</p>
+            </header>
+
+            <div class="restaurants-grid">
+                <article class="restaurant-card"
+                    data-name="BFC Anspach"
+                    data-address="Boulevard Anspach 50, 1000 Bruxelles"
+                    data-maps="https://www.google.com/maps/search/?api=1&query=Boulevard+Anspach+50+1000+Bruxelles"
+                    data-img="assets/images/restaurants/anspach.jpg">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="restaurant-logo-badge">
+                    <span class="restaurant-status" data-i18n="restaurants.status.open">Ouvert</span>
+                    <div class="restaurant-content">
+                        <div class="restaurant-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h3 class="restaurant-name">BFC Anspach</h3>
+                        <p class="restaurant-address">Boulevard Anspach 50<br>1000 Bruxelles</p>
+                    </div>
+                </article>
+
+                <article class="restaurant-card"
+                    data-name="BFC Anderlecht"
+                    data-address="Rue Wayez 109, 1070 Anderlecht"
+                    data-maps="https://www.google.com/maps/search/?api=1&query=Rue+Wayez+109+1070+Anderlecht"
+                    data-img="assets/images/restaurants/anderlecht.jpg">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="restaurant-logo-badge">
+                    <span class="restaurant-status" data-i18n="restaurants.status.open">Ouvert</span>
+                    <div class="restaurant-content">
+                        <div class="restaurant-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h3 class="restaurant-name">BFC Anderlecht</h3>
+                        <p class="restaurant-address">Rue Wayez 109<br>1070 Anderlecht</p>
+                    </div>
+                </article>
+
+                <article class="restaurant-card"
+                    data-name="BFC Saint-Gilles"
+                    data-address="Parvis de Saint-Gilles 10, 1060 Saint-Gilles"
+                    data-maps="https://www.google.com/maps/search/?api=1&query=Parvis+de+Saint-Gilles+10+1060+Saint-Gilles"
+                    data-img="assets/images/restaurants/saintgilles.png">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="restaurant-logo-badge">
+                    <span class="restaurant-status" data-i18n="restaurants.status.open">Ouvert</span>
+                    <div class="restaurant-content">
+                        <div class="restaurant-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h3 class="restaurant-name">BFC Saint-Gilles</h3>
+                        <p class="restaurant-address">Parvis de Saint-Gilles 10<br>1060 Saint-Gilles</p>
+                    </div>
+                </article>
+
+                <article class="restaurant-card"
+                    data-name="BFC Zaventem"
+                    data-address="Sint Stefaanstraat 17, 1932 Zaventem"
+                    data-maps="https://www.google.com/maps/search/?api=1&query=Sint+Stefaanstraat+17+1932+Zaventem"
+                    data-img="assets/images/restaurants/zaventem.jpg">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="restaurant-logo-badge">
+                    <span class="restaurant-status" data-i18n="restaurants.status.open">Ouvert</span>
+                    <div class="restaurant-content">
+                        <div class="restaurant-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h3 class="restaurant-name">BFC Zaventem</h3>
+                        <p class="restaurant-address">Sint Stefaanstraat 17<br>1932 Zaventem</p>
+                    </div>
+                </article>
+
+                <article class="restaurant-card"
+                    data-name="BFC La Louvière"
+                    data-address="Rue Albert 1er 84, 7100 La Louvière"
+                    data-maps="https://www.google.com/maps/search/?api=1&query=Rue+Albert+1er+84+7100+La+Louviere"
+                    data-img="assets/images/restaurants/lalouviere.jpg">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="restaurant-logo-badge">
+                    <span class="restaurant-status" data-i18n="restaurants.status.open">Ouvert</span>
+                    <div class="restaurant-content">
+                        <div class="restaurant-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h3 class="restaurant-name">BFC La Louvière</h3>
+                        <p class="restaurant-address">Rue Albert 1er 84<br>7100 La Louvière</p>
+                    </div>
+                </article>
+
+                <article class="restaurant-card restaurant-card--coming">
+                    <img src="assets/logo/logoNew.png" alt="BFC" class="restaurant-logo-badge">
+                    <span class="restaurant-status restaurant-status--soon" data-i18n="restaurants.status.soon">Bientôt</span>
+                    <div class="restaurant-content">
+                        <div class="restaurant-icon">
+                            <i data-lucide="map-pin"></i>
+                        </div>
+                        <h3 class="restaurant-name">BFC Schaerbeek</h3>
+                        <p class="restaurant-address"><span data-i18n="restaurants.address.coming">Adresse à venir</span><br>1030 Schaerbeek</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order" id="order">
+        <div class="container">
+            <header class="section-header section-header--center">
+                <span class="section-tag" data-i18n="order.tag">Commander</span>
+                <h2 class="section-title" data-i18n="order.title">LIVRÉ CHEZ VOUS</h2>
+                <p class="section-desc" data-i18n="order.desc">Commandez via votre plateforme préférée</p>
+            </header>
+
+            <div class="delivery-grid">
+                <a href="https://deliveroo.be/en/menu/brussels/bruxelles-centre/bfc-anspach" target="_blank" class="delivery-card">
+                    <img src="assets/icons/delivery/deliveroo.svg" alt="Deliveroo" class="delivery-logo">
+                    <span class="delivery-name">Deliveroo</span>
+                    <span class="delivery-cta"><span data-i18n="order.cta">Commander</span> →</span>
+                </a>
+
+                <a href="https://www.ubereats.com/be-en/store/bfc/nKwZ6BB3SROK0fUOtjTecQ" target="_blank" class="delivery-card">
+                    <img src="assets/icons/delivery/uberEats.svg" alt="Uber Eats" class="delivery-logo">
+                    <span class="delivery-name">Uber Eats</span>
+                    <span class="delivery-cta"><span data-i18n="order.cta">Commander</span> →</span>
+                </a>
+
+                <a href="https://www.takeaway.com/be-en/menu/bfc-1" target="_blank" class="delivery-card">
+                    <img src="assets/icons/delivery/takeaway.svg" alt="Takeaway" class="delivery-logo">
+                    <span class="delivery-name">Takeaway</span>
+                    <span class="delivery-cta"><span data-i18n="order.cta">Commander</span> →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="assets/logo/logoNew.png" alt="BFC Belgium" class="footer-logo">
+                    <p class="footer-tagline" data-i18n="footer.tagline">Belgium's Fried Chicken depuis 2019.<br>Le poulet croustillant qui fait la différence.</p>
+                    <div class="footer-social">
+                        <a href="https://www.instagram.com/bfc_belgium/" target="_blank" class="social-link" aria-label="Instagram">
+                            <i data-lucide="instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4 class="footer-title" data-i18n="footer.nav">Navigation</h4>
+                        <ul>
+                            <li><a href="#menu" data-i18n="nav.products">Produits</a></li>
+                            <li><a href="#meals" data-i18n="nav.menu">Menu</a></li>
+                            <li><a href="#restaurants" data-i18n="nav.restaurants">Restaurants</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-title" data-i18n="footer.order">Commander</h4>
+                        <ul>
+                            <li><a href="https://deliveroo.be" target="_blank">Deliveroo</a></li>
+                            <li><a href="https://ubereats.com" target="_blank">Uber Eats</a></li>
+                            <li><a href="https://takeaway.com" target="_blank">Takeaway</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4 class="footer-title" data-i18n="footer.legal">Légal</h4>
+                        <ul>
+                            <li><a href="#" data-i18n="footer.privacy">Confidentialité</a></li>
+                            <li><a href="#" data-i18n="footer.terms">Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© <span id="footerYear"></span> BFC Belgium. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+                <p class="footer-credit"><span data-i18n="footer.designed">Conçu par</span> <a href="https://www.linkedin.com/in/hiliyeh-bashir/" target="_blank" rel="noopener">Hiliyeh Bashir</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="src/js/translations.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>
