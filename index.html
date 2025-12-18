@@ -17,6 +17,19 @@
     <meta name="copyright" content="© 2025 BFC Belgium - Tous droits réservés">
     <meta name="created" content="Décembre 2025">
 
+    <!-- Open Graph / Partage réseaux sociaux -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BFC Belgium">
+    <meta property="og:description" content="Le meilleur poulet frit de Belgique. Croustillant, juteux, inoubliable.">
+    <meta property="og:image" content="assets/logo/logoNew.png">
+    <meta property="og:locale" content="fr_BE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="BFC Belgium">
+    <meta name="twitter:description" content="Le meilleur poulet frit de Belgique. Croustillant, juteux, inoubliable.">
+    <meta name="twitter:image" content="assets/logo/logoNew.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,69 +95,69 @@
                 <span></span>
                 <span></span>
             </button>
-
-            <!-- Mobile Menu Overlay -->
-            <div class="nav-overlay" id="navOverlay"></div>
-
-            <!-- Mobile Menu Panel -->
-            <div class="nav-mobile" id="navMobile">
-                <button class="nav-mobile-close" id="navMobileClose" aria-label="Fermer le menu">
-                    <i data-lucide="x"></i>
-                </button>
-                <div class="nav-mobile-header">
-                    <img src="assets/logo/logoNew.png" alt="BFC" class="nav-mobile-logo">
-                    <span class="nav-mobile-tagline">Belgium's Fried Chicken</span>
-                </div>
-
-                <nav class="nav-mobile-links">
-                    <a href="#menu" class="nav-mobile-link">
-                        <span class="nav-mobile-link-icon"><i data-lucide="utensils"></i></span>
-                        <span class="nav-mobile-link-text">
-                            <span class="nav-mobile-link-title" data-i18n="nav.products">Produits</span>
-                            <span class="nav-mobile-link-desc" data-i18n="nav.mobile.products.desc">Burgers, Buckets, Boissons</span>
-                        </span>
-                    </a>
-                    <a href="#meals" class="nav-mobile-link">
-                        <span class="nav-mobile-link-icon"><i data-lucide="clipboard-list"></i></span>
-                        <span class="nav-mobile-link-text">
-                            <span class="nav-mobile-link-title" data-i18n="nav.menu">Menus</span>
-                            <span class="nav-mobile-link-desc" data-i18n="nav.mobile.menu.desc">Composez votre repas</span>
-                        </span>
-                    </a>
-                    <a href="#restaurants" class="nav-mobile-link">
-                        <span class="nav-mobile-link-icon"><i data-lucide="map-pin"></i></span>
-                        <span class="nav-mobile-link-text">
-                            <span class="nav-mobile-link-title" data-i18n="nav.restaurants">Restaurants</span>
-                            <span class="nav-mobile-link-desc" data-i18n="nav.mobile.restaurants.desc">Trouvez le plus proche</span>
-                        </span>
-                    </a>
-                    <a href="#order" class="nav-mobile-link nav-mobile-link--cta">
-                        <span class="nav-mobile-link-icon"><i data-lucide="shopping-bag"></i></span>
-                        <span class="nav-mobile-link-text">
-                            <span class="nav-mobile-link-title" data-i18n="nav.order">Commander</span>
-                            <span class="nav-mobile-link-desc" data-i18n="nav.mobile.order.desc">Uber Eats, Deliveroo, Takeaway</span>
-                        </span>
-                    </a>
-                </nav>
-
-                <div class="nav-mobile-footer">
-                    <!-- Mobile Language Switcher -->
-                    <div class="lang-switcher-mobile" id="langSwitcherMobile">
-                        <button class="lang-btn-mobile" data-lang="fr">FR</button>
-                        <button class="lang-btn-mobile" data-lang="nl">NL</button>
-                        <button class="lang-btn-mobile" data-lang="en">EN</button>
-                    </div>
-
-                    <div class="nav-mobile-social">
-                        <a href="https://www.instagram.com/bfc_belgium/" target="_blank" class="nav-mobile-social-link" aria-label="Instagram">
-                            <i data-lucide="instagram"></i>
-                        </a>
-                    </div>
-                    <p class="nav-mobile-info" data-i18n="nav.mobile.social">Suivez-nous sur les réseaux</p>
-                </div>
-            </div>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay (outside nav for proper z-index stacking) -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- Mobile Menu Panel (outside nav for proper z-index stacking) -->
+    <div class="nav-mobile" id="navMobile">
+        <button class="nav-mobile-close" id="navMobileClose" aria-label="Fermer le menu">
+            <i data-lucide="x"></i>
+        </button>
+        <div class="nav-mobile-header">
+            <img src="assets/logo/logoNew.png" alt="BFC" class="nav-mobile-logo">
+            <span class="nav-mobile-tagline">Belgium's Fried Chicken</span>
+        </div>
+
+        <nav class="nav-mobile-links">
+            <a href="#menu" class="nav-mobile-link">
+                <span class="nav-mobile-link-icon"><i data-lucide="utensils"></i></span>
+                <span class="nav-mobile-link-text">
+                    <span class="nav-mobile-link-title" data-i18n="nav.products">Produits</span>
+                    <span class="nav-mobile-link-desc" data-i18n="nav.mobile.products.desc">Burgers, Buckets, Boissons</span>
+                </span>
+            </a>
+            <a href="#meals" class="nav-mobile-link">
+                <span class="nav-mobile-link-icon"><i data-lucide="clipboard-list"></i></span>
+                <span class="nav-mobile-link-text">
+                    <span class="nav-mobile-link-title" data-i18n="nav.menu">Menus</span>
+                    <span class="nav-mobile-link-desc" data-i18n="nav.mobile.menu.desc">Composez votre repas</span>
+                </span>
+            </a>
+            <a href="#restaurants" class="nav-mobile-link">
+                <span class="nav-mobile-link-icon"><i data-lucide="map-pin"></i></span>
+                <span class="nav-mobile-link-text">
+                    <span class="nav-mobile-link-title" data-i18n="nav.restaurants">Restaurants</span>
+                    <span class="nav-mobile-link-desc" data-i18n="nav.mobile.restaurants.desc">Trouvez le plus proche</span>
+                </span>
+            </a>
+            <a href="#order" class="nav-mobile-link nav-mobile-link--cta">
+                <span class="nav-mobile-link-icon"><i data-lucide="shopping-bag"></i></span>
+                <span class="nav-mobile-link-text">
+                    <span class="nav-mobile-link-title" data-i18n="nav.order">Commander</span>
+                    <span class="nav-mobile-link-desc" data-i18n="nav.mobile.order.desc">Uber Eats, Deliveroo, Takeaway</span>
+                </span>
+            </a>
+        </nav>
+
+        <div class="nav-mobile-footer">
+            <!-- Mobile Language Switcher -->
+            <div class="lang-switcher-mobile" id="langSwitcherMobile">
+                <button class="lang-btn-mobile" data-lang="fr">FR</button>
+                <button class="lang-btn-mobile" data-lang="nl">NL</button>
+                <button class="lang-btn-mobile" data-lang="en">EN</button>
+            </div>
+
+            <div class="nav-mobile-social">
+                <a href="https://www.instagram.com/bfc_belgium/" target="_blank" class="nav-mobile-social-link" aria-label="Instagram">
+                    <i data-lucide="instagram"></i>
+                </a>
+            </div>
+            <p class="nav-mobile-info" data-i18n="nav.mobile.social">Suivez-nous sur les réseaux</p>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
@@ -157,11 +170,6 @@
         </div>
 
         <div class="hero-content">
-            <div class="hero-brand">
-                <div class="hero-brand-word"><span class="brand-initial">B</span><span class="brand-rest">elgium's</span></div>
-                <div class="hero-brand-word"><span class="brand-initial">F</span><span class="brand-rest">ried</span></div>
-                <div class="hero-brand-word"><span class="brand-initial">C</span><span class="brand-rest">hicken</span></div>
-            </div>
             <h1 class="hero-title">
                 <span class="hero-title-line" data-i18n="hero.title.line1">CROUSTILLANT.</span>
                 <span class="hero-title-line" data-i18n="hero.title.line2">JUTEUX.</span>
@@ -220,16 +228,16 @@
                 <article class="product-card" data-category="burgers">
                     <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
                     <div class="product-image">
-                        <span class="product-badge">Populaire</span>
+                        <span class="product-badge" data-i18n="badge.popular">Populaire</span>
                         <img src="assets/images/products/burgers/chickenBurger.png" alt="Chicken Burger" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Chicken Burger</h3>
+                        <h3 class="product-name" data-i18n="product.chicken.burger">Chicken Burger</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Poulet</li>
-                            <li><i data-lucide="check"></i>Laitue</li>
-                            <li><i data-lucide="check"></i>Tomate</li>
-                            <li><i data-lucide="check"></i>Mayo</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.poulet">Poulet</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.laitue">Laitue</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.tomate">Tomate</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.mayo">Mayo</span></li>
                         </ul>
                     </div>
                 </article>
@@ -241,12 +249,12 @@
                         <img src="assets/images/products/burgers/maxiChicken.png" alt="Maxi Chicken" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Maxi Chicken</h3>
+                        <h3 class="product-name" data-i18n="product.maxi.chicken">Maxi Chicken</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Double Poulet</li>
-                            <li><i data-lucide="check"></i>Fromage</li>
-                            <li><i data-lucide="check"></i>Sauce</li>
-                            <li><i data-lucide="check"></i>Oignons</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.double.poulet">Double Poulet</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.fromage">Fromage</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.sauce">Sauce</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.oignons">Oignons</span></li>
                         </ul>
                     </div>
                 </article>
@@ -257,12 +265,12 @@
                         <img src="assets/images/products/burgers/crunchy.png" alt="Crunchy Burger" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Crunchy Burger</h3>
+                        <h3 class="product-name" data-i18n="product.crunchy.burger">Crunchy Burger</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Poulet Crispy</li>
-                            <li><i data-lucide="check"></i>Salade</li>
-                            <li><i data-lucide="check"></i>Sauce</li>
-                            <li><i data-lucide="check"></i>Pain</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.poulet.crispy">Poulet Crispy</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.salade">Salade</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.sauce">Sauce</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.pain">Pain</span></li>
                         </ul>
                     </div>
                 </article>
@@ -273,12 +281,12 @@
                         <img src="assets/images/products/burgers/meatBurger.png" alt="Meat Burger" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Meat Burger</h3>
+                        <h3 class="product-name" data-i18n="product.meat.burger">Meat Burger</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Boeuf</li>
-                            <li><i data-lucide="check"></i>Fromage</li>
-                            <li><i data-lucide="check"></i>Oignons</li>
-                            <li><i data-lucide="check"></i>Sauce BBQ</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.boeuf">Boeuf</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.fromage">Fromage</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.oignons">Oignons</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.sauce.bbq">Sauce BBQ</span></li>
                         </ul>
                     </div>
                 </article>
@@ -290,12 +298,12 @@
                         <img src="assets/images/products/burgers/maxiMeat.png" alt="Maxi Meat" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Maxi Meat</h3>
+                        <h3 class="product-name" data-i18n="product.maxi.meat">Maxi Meat</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Double Boeuf</li>
-                            <li><i data-lucide="check"></i>Fromage</li>
-                            <li><i data-lucide="check"></i>Bacon</li>
-                            <li><i data-lucide="check"></i>Oignons</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.double.boeuf">Double Boeuf</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.fromage">Fromage</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.bacon">Bacon</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.oignons">Oignons</span></li>
                         </ul>
                     </div>
                 </article>
@@ -306,12 +314,12 @@
                         <img src="assets/images/products/burgers/wrap.png" alt="Wrap" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Chicken Wrap</h3>
+                        <h3 class="product-name" data-i18n="product.chicken.wrap">Chicken Wrap</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Tortilla</li>
-                            <li><i data-lucide="check"></i>Poulet</li>
-                            <li><i data-lucide="check"></i>Sauce</li>
-                            <li><i data-lucide="check"></i>Crudites</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.tortilla">Tortilla</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.poulet">Poulet</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.sauce">Sauce</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.crudites">Crudités</span></li>
                         </ul>
                     </div>
                 </article>
@@ -322,12 +330,12 @@
                         <img src="assets/images/products/burgers/fishBurger.png" alt="Fish Burger" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Fish Burger</h3>
+                        <h3 class="product-name" data-i18n="product.fish.burger">Fish Burger</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Poisson</li>
-                            <li><i data-lucide="check"></i>Tartare</li>
-                            <li><i data-lucide="check"></i>Salade</li>
-                            <li><i data-lucide="check"></i>Pain</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.poisson">Poisson</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.tartare">Tartare</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.salade">Salade</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.pain">Pain</span></li>
                         </ul>
                     </div>
                 </article>
@@ -336,14 +344,14 @@
                 <article class="product-card hidden" data-category="buckets">
                     <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
                     <div class="product-image">
-                        <span class="product-badge">Best Seller</span>
+                        <span class="product-badge" data-i18n="badge.bestseller">Best Seller</span>
                         <img src="assets/images/products/buckets/10tenders.png" alt="10 Tenders" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">10 Tenders</h3>
+                        <h3 class="product-name" data-i18n="product.10.tenders">10 Tenders</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>10 Tenders</li>
-                            <li><i data-lucide="check"></i>2 Sauces</li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.10.tenders">10 Tenders</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.2.sauces">2 Sauces</span></li>
                         </ul>
                     </div>
                 </article>
@@ -351,15 +359,15 @@
                 <article class="product-card hidden" data-category="buckets">
                     <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
                     <div class="product-image">
-                        <span class="product-badge product-badge--spicy">Spicy</span>
+                        <span class="product-badge product-badge--spicy" data-i18n="badge.spicy">Spicy</span>
                         <img src="assets/images/products/buckets/26hotwings.png" alt="26 Hot Wings" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">26 Hot Wings</h3>
+                        <h3 class="product-name" data-i18n="product.26.hot.wings">26 Hot Wings</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>26 Wings</li>
-                            <li><i data-lucide="check"></i>Epice</li>
-                            <li><i data-lucide="check"></i>3 Sauces</li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.26.wings">26 Wings</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.epice">Épicé</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.3.sauces">3 Sauces</span></li>
                         </ul>
                     </div>
                 </article>
@@ -370,12 +378,12 @@
                         <img src="assets/images/products/buckets/familyBucket.png" alt="Family Bucket" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Family Bucket</h3>
+                        <h3 class="product-name" data-i18n="product.family.bucket">Family Bucket</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>15 Pieces</li>
-                            <li><i data-lucide="check"></i>Frites</li>
-                            <li><i data-lucide="check"></i>Coleslaw</li>
-                            <li><i data-lucide="check"></i>4 Sauces</li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.15.pieces">15 Pièces</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.frites">Frites</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.coleslaw">Coleslaw</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.4.sauces">4 Sauces</span></li>
                         </ul>
                     </div>
                 </article>
@@ -386,12 +394,12 @@
                         <img src="assets/images/products/buckets/bucketMix.png" alt="Bucket Mix" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Bucket Mix</h3>
+                        <h3 class="product-name" data-i18n="product.bucket.mix">Bucket Mix</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Tenders</li>
-                            <li><i data-lucide="check"></i>Wings</li>
-                            <li><i data-lucide="check"></i>Drumsticks</li>
-                            <li><i data-lucide="check"></i>3 Sauces</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.tenders">Tenders</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.wings">Wings</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.drumsticks">Drumsticks</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.3.sauces">3 Sauces</span></li>
                         </ul>
                     </div>
                 </article>
@@ -402,11 +410,11 @@
                         <img src="assets/images/products/buckets/duoBucket.png" alt="Duo Bucket" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Duo Bucket</h3>
+                        <h3 class="product-name" data-i18n="product.duo.bucket">Duo Bucket</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>8 Pieces</li>
-                            <li><i data-lucide="check"></i>Frites</li>
-                            <li><i data-lucide="check"></i>2 Sauces</li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.8.pieces">8 Pièces</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.frites">Frites</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.2.sauces">2 Sauces</span></li>
                         </ul>
                     </div>
                 </article>
@@ -418,12 +426,12 @@
                         <img src="assets/images/products/buckets/maxi.png" alt="Maxi Bucket" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Maxi Bucket</h3>
+                        <h3 class="product-name" data-i18n="product.maxi.bucket">Maxi Bucket</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>20 Pieces</li>
-                            <li><i data-lucide="check"></i>2x Frites</li>
-                            <li><i data-lucide="check"></i>Coleslaw XL</li>
-                            <li><i data-lucide="check"></i>6 Sauces</li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.20.pieces">20 Pièces</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.2x.frites">2x Frites</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.coleslaw.xl">Coleslaw XL</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.6.sauces">6 Sauces</span></li>
                         </ul>
                     </div>
                 </article>
@@ -435,11 +443,11 @@
                         <img src="assets/images/products/desserts/brownie.png" alt="Chocolate Fudge Brownie" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Chocolate Brownie</h3>
+                        <h3 class="product-name" data-i18n="product.chocolate.brownie">Brownie Chocolat</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Glace</li>
-                            <li><i data-lucide="check"></i>Brownie</li>
-                            <li><i data-lucide="check"></i>Chocolat</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.glace">Glace</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.brownie">Brownie</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.chocolat">Chocolat</span></li>
                         </ul>
                     </div>
                 </article>
@@ -450,11 +458,11 @@
                         <img src="assets/images/products/desserts/cookieDough.png" alt="Cookie Dough" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Cookie Dough</h3>
+                        <h3 class="product-name" data-i18n="product.cookie.dough">Cookie Dough</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Glace</li>
-                            <li><i data-lucide="check"></i>Cookie</li>
-                            <li><i data-lucide="check"></i>Pepites</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.glace">Glace</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.cookie">Cookie</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.pepites">Pépites</span></li>
                         </ul>
                     </div>
                 </article>
@@ -465,11 +473,11 @@
                         <img src="assets/images/products/desserts/cheesecake.png" alt="Strawberry Cheesecake" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Strawberry Cheesecake</h3>
+                        <h3 class="product-name" data-i18n="product.strawberry.cheesecake">Cheesecake Fraise</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Cheesecake</li>
-                            <li><i data-lucide="check"></i>Fraises</li>
-                            <li><i data-lucide="check"></i>Coulis</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.cheesecake">Cheesecake</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.fraises">Fraises</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.coulis">Coulis</span></li>
                         </ul>
                     </div>
                 </article>
@@ -481,9 +489,9 @@
                         <img src="assets/images/products/drinks/pepsi.png" alt="Pepsi" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Pepsi</h3>
+                        <h3 class="product-name" data-i18n="product.pepsi">Pepsi</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>33cl / 50cl</li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.33cl.50cl">33cl / 50cl</span></li>
                         </ul>
                     </div>
                 </article>
@@ -491,14 +499,14 @@
                 <article class="product-card hidden" data-category="drinks">
                     <img src="assets/logo/logoNew.png" alt="BFC" class="card-logo-badge">
                     <div class="product-image">
-                        <span class="product-badge">Zero</span>
+                        <span class="product-badge" data-i18n="badge.zero">Zero</span>
                         <img src="assets/images/products/drinks/pepsiMax.png" alt="Pepsi Max" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Pepsi Max</h3>
+                        <h3 class="product-name" data-i18n="product.pepsi.max">Pepsi Max</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Zero Sucre</li>
-                            <li><i data-lucide="check"></i>33cl / 50cl</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.zero.sucre">Zero Sucre</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.33cl.50cl">33cl / 50cl</span></li>
                         </ul>
                     </div>
                 </article>
@@ -509,10 +517,10 @@
                         <img src="assets/images/products/drinks/7up.png" alt="7UP" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">7UP</h3>
+                        <h3 class="product-name" data-i18n="product.7up">7UP</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Citron-Lime</li>
-                            <li><i data-lucide="check"></i>33cl / 50cl</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.citron.lime">Citron-Lime</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.33cl.50cl">33cl / 50cl</span></li>
                         </ul>
                     </div>
                 </article>
@@ -523,10 +531,10 @@
                         <img src="assets/images/products/drinks/mirinda.png" alt="Mirinda" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Mirinda</h3>
+                        <h3 class="product-name" data-i18n="product.mirinda">Mirinda</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Orange</li>
-                            <li><i data-lucide="check"></i>33cl / 50cl</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.orange">Orange</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.33cl.50cl">33cl / 50cl</span></li>
                         </ul>
                     </div>
                 </article>
@@ -537,10 +545,10 @@
                         <img src="assets/images/products/drinks/spaRiene.png" alt="Spa Reine" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Spa Reine</h3>
+                        <h3 class="product-name" data-i18n="product.spa.reine">Spa Reine</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Eau Plate</li>
-                            <li><i data-lucide="check"></i>50cl</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.eau.plate">Eau Plate</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.50cl">50cl</span></li>
                         </ul>
                     </div>
                 </article>
@@ -551,10 +559,10 @@
                         <img src="assets/images/products/drinks/spaIntense.png" alt="Spa Intense" loading="lazy">
                     </div>
                     <div class="product-content">
-                        <h3 class="product-name">Spa Intense</h3>
+                        <h3 class="product-name" data-i18n="product.spa.intense">Spa Intense</h3>
                         <ul class="product-ingredients">
-                            <li><i data-lucide="check"></i>Petillante</li>
-                            <li><i data-lucide="check"></i>50cl</li>
+                            <li><i data-lucide="check"></i><span data-i18n="ingredient.petillante">Pétillante</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.50cl">50cl</span></li>
                         </ul>
                     </div>
                 </article>
@@ -564,75 +572,6 @@
 
     <!-- Meals Section -->
     <section class="meals" id="meals">
-        <!-- Mobile Welcome Selector -->
-        <div class="meal-welcome" id="mealWelcome">
-            <div class="meal-welcome-content">
-                <div class="meal-welcome-header">
-                    <img src="assets/logo/logoNew.png" alt="BFC" class="meal-welcome-logo">
-                    <h2 class="meal-welcome-title" data-i18n="meals.welcome.title">Composez votre menu</h2>
-                    <p class="meal-welcome-subtitle" data-i18n="meals.welcome.subtitle">En 2 clics, trouvez le menu parfait</p>
-                </div>
-
-                <div class="meal-welcome-steps">
-                    <!-- Step 1: Faim -->
-                    <div class="welcome-step active" data-step="1">
-                        <span class="welcome-step-number">1/2</span>
-                        <span class="welcome-step-label" data-i18n="meals.step1.label">Quelle faim ?</span>
-                        <div class="welcome-options welcome-options--visual">
-                            <button class="welcome-option welcome-option--visual" data-size="petit">
-                                <div class="welcome-option-img">
-                                    <img src="assets/images/meals/chickenBurgerMeal.png" alt="Petite faim">
-                                </div>
-                                <div class="welcome-option-info">
-                                    <span class="welcome-option-text" data-i18n="meals.size.small">Petite faim</span>
-                                    <span class="welcome-option-desc" data-i18n="meals.size.small.desc">Burger + Frites + Boisson</span>
-                                </div>
-                            </button>
-                            <button class="welcome-option welcome-option--visual" data-size="grand">
-                                <div class="welcome-option-img">
-                                    <img src="assets/images/meals/maxiChickenMeal.png" alt="Grande faim">
-                                </div>
-                                <div class="welcome-option-info">
-                                    <span class="welcome-option-text" data-i18n="meals.size.big">Grande faim</span>
-                                    <span class="welcome-option-desc" data-i18n="meals.size.big.desc">Maxi Burger + Large Frites + 50cl</span>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Step 2: J'aime -->
-                    <div class="welcome-step" data-step="2">
-                        <span class="welcome-step-number">2/2</span>
-                        <span class="welcome-step-label" data-i18n="meals.step2.label">Vous préférez ?</span>
-                        <div class="welcome-options welcome-options--visual">
-                            <button class="welcome-option welcome-option--visual" data-type="poulet">
-                                <div class="welcome-option-img">
-                                    <img src="assets/images/burgers/chickenBurger.png" alt="Poulet">
-                                </div>
-                                <div class="welcome-option-info">
-                                    <iconify-icon icon="twemoji:poultry-leg"></iconify-icon>
-                                    <span class="welcome-option-text" data-i18n="meals.type.chicken">Poulet</span>
-                                </div>
-                            </button>
-                            <button class="welcome-option welcome-option--visual" data-type="boeuf">
-                                <div class="welcome-option-img">
-                                    <img src="assets/images/burgers/meatBurger.png" alt="Boeuf">
-                                </div>
-                                <div class="welcome-option-info">
-                                    <iconify-icon icon="twemoji:cut-of-meat"></iconify-icon>
-                                    <span class="welcome-option-text" data-i18n="meals.type.beef">Boeuf</span>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="meal-welcome-skip" id="mealWelcomeSkip" data-i18n="meals.skip">
-                    Voir tous les menus
-                </button>
-            </div>
-        </div>
-
         <div class="container">
             <!-- Section Header -->
             <div class="section-header section-header--light">
@@ -666,11 +605,11 @@
                         <img src="assets/images/meals/chickenBurgerMeal.png" alt="Meal Chicken" loading="lazy">
                     </div>
                     <div class="meal-content">
-                        <h3 class="meal-name">Meal Chicken</h3>
+                        <h3 class="meal-name" data-i18n="product.meal.chicken">Menu Chicken</h3>
                         <ul class="meal-includes">
-                            <li><i data-lucide="check"></i>Burger</li>
-                            <li><i data-lucide="check"></i>Frites</li>
-                            <li><i data-lucide="check"></i>33cl</li>
+                            <li><i data-lucide="check"></i><span data-i18n="meals.includes.burger">Burger</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="meals.includes.frites">Frites</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.33cl">33cl</span></li>
                         </ul>
                     </div>
                 </article>
@@ -681,11 +620,11 @@
                         <img src="assets/images/meals/maxiChickenMeal.png" alt="Meal Maxi Chicken" loading="lazy">
                     </div>
                     <div class="meal-content">
-                        <h3 class="meal-name">Meal Maxi Chicken</h3>
+                        <h3 class="meal-name" data-i18n="product.meal.maxi.chicken">Menu Maxi Chicken</h3>
                         <ul class="meal-includes">
-                            <li><i data-lucide="check"></i>Maxi Burger</li>
-                            <li><i data-lucide="check"></i>Large Frites</li>
-                            <li><i data-lucide="check"></i>50cl</li>
+                            <li><i data-lucide="check"></i><span data-i18n="meals.includes.maxi.burger">Maxi Burger</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="meals.includes.large.frites">Large Frites</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.50cl">50cl</span></li>
                         </ul>
                     </div>
                 </article>
@@ -696,11 +635,11 @@
                         <img src="assets/images/meals/meatBurgerMeal.png" alt="Meal Meat" loading="lazy">
                     </div>
                     <div class="meal-content">
-                        <h3 class="meal-name">Meal Meat</h3>
+                        <h3 class="meal-name" data-i18n="product.meal.meat">Menu Meat</h3>
                         <ul class="meal-includes">
-                            <li><i data-lucide="check"></i>Burger</li>
-                            <li><i data-lucide="check"></i>Frites</li>
-                            <li><i data-lucide="check"></i>33cl</li>
+                            <li><i data-lucide="check"></i><span data-i18n="meals.includes.burger">Burger</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="meals.includes.frites">Frites</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.33cl">33cl</span></li>
                         </ul>
                     </div>
                 </article>
@@ -711,11 +650,11 @@
                         <img src="assets/images/meals/mealMaxiMeat.png" alt="Meal Maxi Meat" loading="lazy">
                     </div>
                     <div class="meal-content">
-                        <h3 class="meal-name">Meal Maxi Meat</h3>
+                        <h3 class="meal-name" data-i18n="product.meal.maxi.meat">Menu Maxi Meat</h3>
                         <ul class="meal-includes">
-                            <li><i data-lucide="check"></i>Maxi Burger</li>
-                            <li><i data-lucide="check"></i>Large Frites</li>
-                            <li><i data-lucide="check"></i>50cl</li>
+                            <li><i data-lucide="check"></i><span data-i18n="meals.includes.maxi.burger">Maxi Burger</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="meals.includes.large.frites">Large Frites</span></li>
+                            <li><i data-lucide="check"></i><span data-i18n="quantity.50cl">50cl</span></li>
                         </ul>
                     </div>
                 </article>

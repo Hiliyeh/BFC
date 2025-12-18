@@ -917,6 +917,24 @@ const LiveSales = {
         }
 
         this.startInterval();
+        this.bindEvents();
+    },
+
+    bindEvents() {
+        // Click on sale item opens restaurant modal
+        EventManager.add(this.feed, 'click', (e) => {
+            const saleItem = e.target.closest('.sale-item');
+            if (!saleItem) return;
+
+            const restaurantName = saleItem.dataset.restaurant;
+            if (!restaurantName) return;
+
+            // Find the restaurant card with matching name
+            const restaurantCard = document.querySelector(`.restaurant-card[data-name="${restaurantName}"]`);
+            if (restaurantCard && !restaurantCard.classList.contains('restaurant-card--coming')) {
+                RestaurantModal.openModal(restaurantCard);
+            }
+        });
     },
 
     getRandomInterval() {
@@ -1243,7 +1261,7 @@ const ModuleManager = {
         Navigation,
         MenuTabs,
         MealFilters,
-        MealWelcome,
+        // MealWelcome, // Désactivé - popup mobile supprimé
         ProductModal,
         RestaurantModal,
         LiveSales,

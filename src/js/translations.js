@@ -641,6 +641,244 @@ const TRANSLATIONS = {
         fr: 'Anglais',
         nl: 'Engels',
         en: 'English'
+    },
+
+    // ========================================
+    // PRODUCT NAMES - BURGERS
+    // ========================================
+    'product.chicken.burger': {
+        fr: 'Chicken Burger',
+        nl: 'Chicken Burger',
+        en: 'Chicken Burger'
+    },
+    'product.maxi.chicken': {
+        fr: 'Maxi Chicken',
+        nl: 'Maxi Chicken',
+        en: 'Maxi Chicken'
+    },
+    'product.crunchy.burger': {
+        fr: 'Crunchy Burger',
+        nl: 'Crunchy Burger',
+        en: 'Crunchy Burger'
+    },
+    'product.meat.burger': {
+        fr: 'Meat Burger',
+        nl: 'Meat Burger',
+        en: 'Meat Burger'
+    },
+    'product.maxi.meat': {
+        fr: 'Maxi Meat',
+        nl: 'Maxi Meat',
+        en: 'Maxi Meat'
+    },
+    'product.chicken.wrap': {
+        fr: 'Chicken Wrap',
+        nl: 'Chicken Wrap',
+        en: 'Chicken Wrap'
+    },
+    'product.fish.burger': {
+        fr: 'Fish Burger',
+        nl: 'Fish Burger',
+        en: 'Fish Burger'
+    },
+
+    // ========================================
+    // PRODUCT NAMES - BUCKETS
+    // ========================================
+    'product.10.tenders': {
+        fr: '10 Tenders',
+        nl: '10 Tenders',
+        en: '10 Tenders'
+    },
+    'product.26.hot.wings': {
+        fr: '26 Hot Wings',
+        nl: '26 Hot Wings',
+        en: '26 Hot Wings'
+    },
+    'product.family.bucket': {
+        fr: 'Family Bucket',
+        nl: 'Familiebucket',
+        en: 'Family Bucket'
+    },
+    'product.bucket.mix': {
+        fr: 'Bucket Mix',
+        nl: 'Bucket Mix',
+        en: 'Bucket Mix'
+    },
+    'product.duo.bucket': {
+        fr: 'Duo Bucket',
+        nl: 'Duo Bucket',
+        en: 'Duo Bucket'
+    },
+    'product.maxi.bucket': {
+        fr: 'Maxi Bucket',
+        nl: 'Maxi Bucket',
+        en: 'Maxi Bucket'
+    },
+
+    // ========================================
+    // PRODUCT NAMES - DESSERTS
+    // ========================================
+    'product.chocolate.brownie': {
+        fr: 'Brownie Chocolat',
+        nl: 'Chocolade Brownie',
+        en: 'Chocolate Brownie'
+    },
+    'product.cookie.dough': {
+        fr: 'Cookie Dough',
+        nl: 'Cookie Dough',
+        en: 'Cookie Dough'
+    },
+    'product.strawberry.cheesecake': {
+        fr: 'Cheesecake Fraise',
+        nl: 'Aardbei Kaastaart',
+        en: 'Strawberry Cheesecake'
+    },
+
+    // ========================================
+    // PRODUCT NAMES - DRINKS
+    // ========================================
+    'product.pepsi': {
+        fr: 'Pepsi',
+        nl: 'Pepsi',
+        en: 'Pepsi'
+    },
+    'product.pepsi.max': {
+        fr: 'Pepsi Max',
+        nl: 'Pepsi Max',
+        en: 'Pepsi Max'
+    },
+    'product.7up': {
+        fr: '7UP',
+        nl: '7UP',
+        en: '7UP'
+    },
+    'product.mirinda': {
+        fr: 'Mirinda',
+        nl: 'Mirinda',
+        en: 'Mirinda'
+    },
+    'product.spa.reine': {
+        fr: 'Spa Reine',
+        nl: 'Spa Reine',
+        en: 'Spa Reine'
+    },
+    'product.spa.intense': {
+        fr: 'Spa Intense',
+        nl: 'Spa Intense',
+        en: 'Spa Intense'
+    },
+
+    // ========================================
+    // BUCKET QUANTITIES & EXTRAS
+    // ========================================
+    'quantity.10.tenders': {
+        fr: '10 Tenders',
+        nl: '10 Tenders',
+        en: '10 Tenders'
+    },
+    'quantity.26.wings': {
+        fr: '26 Wings',
+        nl: '26 Wings',
+        en: '26 Wings'
+    },
+    'quantity.15.pieces': {
+        fr: '15 Pièces',
+        nl: '15 Stuks',
+        en: '15 Pieces'
+    },
+    'quantity.8.pieces': {
+        fr: '8 Pièces',
+        nl: '8 Stuks',
+        en: '8 Pieces'
+    },
+    'quantity.20.pieces': {
+        fr: '20 Pièces',
+        nl: '20 Stuks',
+        en: '20 Pieces'
+    },
+    'quantity.2.sauces': {
+        fr: '2 Sauces',
+        nl: '2 Sauzen',
+        en: '2 Sauces'
+    },
+    'quantity.3.sauces': {
+        fr: '3 Sauces',
+        nl: '3 Sauzen',
+        en: '3 Sauces'
+    },
+    'quantity.4.sauces': {
+        fr: '4 Sauces',
+        nl: '4 Sauzen',
+        en: '4 Sauces'
+    },
+    'quantity.33cl.50cl': {
+        fr: '33cl / 50cl',
+        nl: '33cl / 50cl',
+        en: '33cl / 50cl'
+    },
+    'quantity.33cl': {
+        fr: '33cl',
+        nl: '33cl',
+        en: '33cl'
+    },
+    'quantity.50cl': {
+        fr: '50cl',
+        nl: '50cl',
+        en: '50cl'
+    },
+    'quantity.6.sauces': {
+        fr: '6 Sauces',
+        nl: '6 Sauzen',
+        en: '6 Sauces'
+    },
+    'quantity.2x.frites': {
+        fr: '2x Frites',
+        nl: '2x Frietjes',
+        en: '2x Fries'
+    },
+
+    // ========================================
+    // MEAL NAMES
+    // ========================================
+    'product.meal.chicken': {
+        fr: 'Menu Chicken',
+        nl: 'Chicken Menu',
+        en: 'Chicken Meal'
+    },
+    'product.meal.maxi.chicken': {
+        fr: 'Menu Maxi Chicken',
+        nl: 'Maxi Chicken Menu',
+        en: 'Maxi Chicken Meal'
+    },
+    'product.meal.meat': {
+        fr: 'Menu Meat',
+        nl: 'Meat Menu',
+        en: 'Meat Meal'
+    },
+    'product.meal.maxi.meat': {
+        fr: 'Menu Maxi Meat',
+        nl: 'Maxi Meat Menu',
+        en: 'Maxi Meat Meal'
+    },
+
+    // ========================================
+    // PRODUCT MODAL
+    // ========================================
+    'modal.close': {
+        fr: 'Fermer',
+        nl: 'Sluiten',
+        en: 'Close'
+    },
+    'modal.ingredients': {
+        fr: 'Ingrédients',
+        nl: 'Ingrediënten',
+        en: 'Ingredients'
+    },
+    'modal.order': {
+        fr: 'Commander',
+        nl: 'Bestellen',
+        en: 'Order'
     }
 };
 
